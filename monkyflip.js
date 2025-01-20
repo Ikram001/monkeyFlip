@@ -70,6 +70,19 @@ function resetCards() {
   [firstCard, secondCard] = [null, null];
   lockBoard = false;
 }
+// Clear the board and reset the game
+function resetGame() {
+  const gameBoard = document.getElementById('game-board');
+  gameBoard.innerHTML = ''; // Clear the board
+  firstCard = null; // Reset variables
+  secondCard = null;
+  lockBoard = false;
+  matchesFound = 0;
+  initGame(); // Reinitialize the game
+}
+
+// Attach reset functionality to the button
+document.getElementById('reset-button').addEventListener('click', resetGame);
 
 // Start the game
 initGame();
